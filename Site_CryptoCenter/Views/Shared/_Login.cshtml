@@ -1,0 +1,15 @@
+﻿<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+@if (Session["Id"] != null)
+{
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>@("Bem Vindo " + Session["Nome"] + "  ")</a></li>            
+            <li>@Html.ActionLink(" Log off", "Logout", "Conta", routeValues: null, htmlAttributes: new { id = "logoutLink" })</li>
+        </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Registrar", "Create", "Usuario", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Conta", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

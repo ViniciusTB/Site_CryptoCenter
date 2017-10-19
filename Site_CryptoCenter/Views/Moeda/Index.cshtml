@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Domain_CryptoCenter.Domain.Moeda>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Moedas</h2>
+
+<p>
+    @Html.ActionLink("Adicionar moeda", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apelido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preco)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apelido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Preco)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.MoedaId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.MoedaId }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.MoedaId })
+        </td>
+    </tr>
+}
+
+</table>

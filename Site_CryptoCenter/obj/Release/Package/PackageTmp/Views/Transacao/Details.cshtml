@@ -1,0 +1,50 @@
+﻿@model Domain_CryptoCenter.Domain.Transacao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transacao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Moeda.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Moeda.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataTransacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataTransacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TransacaoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

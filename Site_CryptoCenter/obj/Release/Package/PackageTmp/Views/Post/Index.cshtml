@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Domain_CryptoCenter.Domain.Post>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Posts</h2>
+@if (Session["Id"] != null)
+{
+    <p>
+        @Html.ActionLink("Novo post", "Create")
+    </p>
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Conteudo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Publicado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Conteudo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataPost)
+        </td>
+        <td>
+            @if (item.Publicado)
+            {
+                <b>Sim</b>
+            }
+            else
+            {
+                <b>Não</b>
+            }
+
+        </td>
+        @if (Session["Id"] != null)
+        {
+            if (Session["Nome"].Equals("admin"))
+            {
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.PostId }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.PostId }) |
+                    @Html.ActionLink("Deletar", "Delete", new { id = item.PostId })
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.PostId })
+                </td>
+            }
+
+        }
+       
+
+    </tr>
+}
+
+</table>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("titulo", "", new { @class = "form-control", @placeholder = "Buscar" })
+        <input type="submit" value="Filtrar" class="btn btn-primary"/>
+    }
+</div>

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Domain_CryptoCenter.Domain.Transacao>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Transação</h2>
+@if (Session["Id"] != null)
+{
+    <p>
+        @Html.ActionLink("Nova Transação", "Create")
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Moeda
+        </th>
+        <th>
+            Usuário
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Moeda.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantidade)
+        </td>
+        @if (Session["Id"] != null)
+        {
+            if (Session["Nome"].Equals("admin"))
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TransacaoId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TransacaoId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TransacaoId })
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.TransacaoId })
+                </td>
+            }
+
+        }
+
+    </tr>
+}
+
+</table>

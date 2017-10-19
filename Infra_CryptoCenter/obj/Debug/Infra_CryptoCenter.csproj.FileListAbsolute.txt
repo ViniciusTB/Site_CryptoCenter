@@ -1,0 +1,12 @@
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\obj\Debug\Infra_CryptoCenter.csprojResolveAssemblyReference.cache
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\bin\Debug\Infra_CryptoCenter.dll.config
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\bin\Debug\Infra_CryptoCenter.dll
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\bin\Debug\Infra_CryptoCenter.pdb
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\bin\Debug\Domain_CryptoCenter.dll
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\bin\Debug\EntityFramework.dll
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\bin\Debug\Domain_CryptoCenter.pdb
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\bin\Debug\EntityFramework.xml
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\obj\Debug\Infra_CryptoCenter.dll
+c:\users\vinicius\documents\visual studio 2015\Projects\Site_CryptoCenter\Infra_CryptoCenter\obj\Debug\Infra_CryptoCenter.pdb

@@ -1,0 +1,9 @@
+C:\Users\VINICIUS\documents\visual studio 2015\Projects\Site_CryptoCenter\Domain_CryptoCenter\bin\Release\Domain_CryptoCenter.dll.config
+C:\Users\VINICIUS\documents\visual studio 2015\Projects\Site_CryptoCenter\Domain_CryptoCenter\bin\Release\Domain_CryptoCenter.dll
+C:\Users\VINICIUS\documents\visual studio 2015\Projects\Site_CryptoCenter\Domain_CryptoCenter\bin\Release\Domain_CryptoCenter.pdb
+C:\Users\VINICIUS\documents\visual studio 2015\Projects\Site_CryptoCenter\Domain_CryptoCenter\bin\Release\EntityFramework.dll
+C:\Users\VINICIUS\documents\visual studio 2015\Projects\Site_CryptoCenter\Domain_CryptoCenter\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\VINICIUS\documents\visual studio 2015\Projects\Site_CryptoCenter\Domain_CryptoCenter\bin\Release\EntityFramework.xml
+C:\Users\VINICIUS\documents\visual studio 2015\Projects\Site_CryptoCenter\Domain_CryptoCenter\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\VINICIUS\documents\visual studio 2015\Projects\Site_CryptoCenter\Domain_CryptoCenter\obj\Release\Domain_CryptoCenter.dll
+C:\Users\VINICIUS\documents\visual studio 2015\Projects\Site_CryptoCenter\Domain_CryptoCenter\obj\Release\Domain_CryptoCenter.pdb
