@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\CompraInvestimento.cs" />
+    <Compile Include="Domain\Investimento.cs" />
     <Compile Include="Domain\Moeda.cs" />
     <Compile Include="Domain\Post.cs" />
     <Compile Include="Domain\Transacao.cs" />

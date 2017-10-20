@@ -20,6 +20,7 @@ namespace Domain_CryptoCenter.Domain
         [Display(Name = "Data de cadastro")]
         public DateTime DataCadastro { get; }
         public IEnumerable<Moeda> Moedas { get; set; }
+        public IEnumerable<Investimento> Investimentos { get; set; }
 
     }
 }

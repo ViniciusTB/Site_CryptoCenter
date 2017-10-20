@@ -30,11 +30,13 @@
                     <li>@Html.ActionLink("Posts", "Index", "Post")</li>
                     @if (Session["Id"] != null)
                     {
+                        <li>@Html.ActionLink("Comprar Moeda", "Index", "Transacao")</li>
+                        <li>@Html.ActionLink("Comprar Investimento", "Index", "CompraInvestimento")</li>
                         if (Session["Nome"].Equals("admin"))
                         {
                             <li>@Html.ActionLink("Usuarios", "Index", "Usuario")</li>
                             <li>@Html.ActionLink("Moedas", "Index", "Moeda")</li>
-                            <li>@Html.ActionLink("Comprar", "Index", "Transacao")</li>
+                            <li>@Html.ActionLink("Investimentos", "Index", "Investimento")</li>
                         }
                     }
 

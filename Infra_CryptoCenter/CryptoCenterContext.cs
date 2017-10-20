@@ -18,6 +18,8 @@ namespace Infra_CryptoCenter
         public DbSet<Post> Post { get; set; }
         public DbSet<Transacao> Transacao { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Investimento> Investimento { get; set; }
+        public DbSet<CompraInvestimento> CompraInvestimento { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

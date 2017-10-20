@@ -162,8 +162,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CompraInvestimentoController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvestimentoController.cs" />
     <Compile Include="Controllers\MoedaController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\TransacaoController.cs" />
@@ -174,6 +176,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\CryptoCenterDB.mdf" />
+    <Content Include="App_Data\CryptoCenterDB_log.ldf">
+      <DependentUpon>CryptoCenterDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\logo.png">
@@ -238,9 +244,18 @@
     <Content Include="Views\Transacao\Details.cshtml" />
     <Content Include="Views\Transacao\Edit.cshtml" />
     <Content Include="Views\Transacao\Index.cshtml" />
+    <Content Include="Views\Investimento\Create.cshtml" />
+    <Content Include="Views\Investimento\Delete.cshtml" />
+    <Content Include="Views\Investimento\Details.cshtml" />
+    <Content Include="Views\Investimento\Edit.cshtml" />
+    <Content Include="Views\Investimento\Index.cshtml" />
+    <Content Include="Views\CompraInvestimento\Create.cshtml" />
+    <Content Include="Views\CompraInvestimento\Delete.cshtml" />
+    <Content Include="Views\CompraInvestimento\Details.cshtml" />
+    <Content Include="Views\CompraInvestimento\Edit.cshtml" />
+    <Content Include="Views\CompraInvestimento\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\" />
     <Folder Include="Models\" />
   </ItemGroup>
