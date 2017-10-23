@@ -41,25 +41,28 @@
             @Html.DisplayFor(modelItem => item.Quantidade)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Investimento.QuantidadeDisponivel)
+            @Html.DisplayFor(modelItem => item.Investimento.QuantidadeVendida)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Investimento.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modeItem => item.Investimento.QuantidadeVendida)
         </td>
         @if (Session["Id"] != null)
         {
             if (Session["Nome"].Equals("admin"))
             {
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.CompraInvestimentoId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.CompraInvestimentoId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.CompraInvestimentoId })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.CompraInvestimentoId }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.CompraInvestimentoId }) |
+                    @Html.ActionLink("Deletar", "Delete", new { id = item.CompraInvestimentoId })
                 </td>
             }
             else
             {
                 <td>
-                    @Html.ActionLink("Details", "Details", new { id = item.CompraInvestimentoId }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.CompraInvestimentoId }) |
                 </td>
             }
         }
@@ -68,3 +71,12 @@
 }
 
 </table>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("invest", "", new { @class = "form-control", @placeholder = "Buscar" })
+        <input type="submit" value="Filtrar" class="btn btn-primary" />
+    }
+</div>
+

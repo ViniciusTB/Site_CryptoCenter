@@ -16,10 +16,22 @@ namespace Site_CryptoCenter.Controllers
         private CryptoCenterContext db = new CryptoCenterContext();
 
         // GET: CompraInvestimento
-        public ActionResult Index(Investimento investimento)
+        public ActionResult Index(CompraInvestimento cp, Investimento investimento, string invest)
         {
-            var compraInvestimento = db.CompraInvestimento.Include(c => c.Usuario);
-            return View(compraInvestimento.ToList());
+            if (cp.Quantidade <= investimento.QuantidadeDisponivel)
+            {
+                if (invest != null && invest != string.Empty)
+                {
+                    return View(db.CompraInvestimento.Where(x => (x.Investimento.Descricao == invest || x.Usuario.Nome == invest)).ToList());
+                }
+                var compraInvestimento = db.CompraInvestimento.Include(c => c.Usuario);
+                return View(compraInvestimento.ToList());
+            }
+            else
+            {
+                return View("Create","CompraIvestimento");
+            }
+           
         }
 
         // GET: CompraInvestimento/Details/5
@@ -51,7 +63,7 @@ namespace Site_CryptoCenter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CompraInvestimentoId,DataCompra,Quantidade,UsuarioId,InvestimentoId")] CompraInvestimento compraInvestimento)
+        public ActionResult Create([Bind(Include = "CompraInvestimentoId,DataCompra,Quantidade,UsuarioId,InvestimentoId")] CompraInvestimento compraInvestimento, Investimento investimento)
         {
             if (ModelState.IsValid)
             {
@@ -61,8 +73,12 @@ namespace Site_CryptoCenter.Controllers
                 }
                 compraInvestimento.DataCompra = DateTime.Now;
                 db.CompraInvestimento.Add(compraInvestimento);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                //if(compraInvestimento.Quantidade <= investimento.QuantidadeDisponivel)
+                //{
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                //}              
+                //return RedirectToAction("Create", "CompraInvestimento");
             }
 
            // ViewBag.UsuarioId = new SelectList(db.Usuarios, "UsuarioId", "Nome", compraInvestimento.UsuarioId);
@@ -96,8 +112,20 @@ namespace Site_CryptoCenter.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(compraInvestimento).State = EntityState.Modified;
-                db.SaveChanges();
+                var investimento = db.Investimento.First(x => x.InvestimentoId == compraInvestimento.InvestimentoId);
+                if ((investimento.QuantidadeDisponivel - investimento.QuantidadeVendida) > compraInvestimento.Quantidade)
+                {
+                    investimento.QuantidadeVendida += compraInvestimento.Quantidade;
+                    db.Entry(investimento).State = EntityState.Modified;
+                    db.Entry(compraInvestimento).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    var error = "abc";
+                }
+
                 return RedirectToAction("Index");
             }
             ViewBag.InvestimentoId = new SelectList(db.Investimento, "InvestimentoId", "Descricao", compraInvestimento.InvestimentoId);

@@ -11,7 +11,9 @@ namespace Domain_CryptoCenter.Domain
     {
         [Key]
         public int InvestimentoId { get; set; }
+        [Display(Name ="Descrição")]
         public string Descricao { get; set; }
+        [Display(Name ="Quantidade Disponivel")]
         public int QuantidadeDisponivel { get; set; }
         public double Valor { get; set; }
         public int QuantidadeVendida { get; set; }

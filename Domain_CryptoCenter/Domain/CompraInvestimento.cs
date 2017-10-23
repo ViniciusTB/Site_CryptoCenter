@@ -11,6 +11,7 @@ namespace Domain_CryptoCenter.Domain
     {
         [Display(Name ="Investimento")]
         public int CompraInvestimentoId { get; set; }
+        [Display(Name ="Data da compra")]
         public DateTime DataCompra { get; set; }
         public int Quantidade { get; set; }
         public int UsuarioId { get; set; }
