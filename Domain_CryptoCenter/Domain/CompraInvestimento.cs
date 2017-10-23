@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace Domain_CryptoCenter.Domain
 {
     public class CompraInvestimento
     {
+        [Display(Name ="Investimento")]
         public int CompraInvestimentoId { get; set; }
         public DateTime DataCompra { get; set; }
         public int Quantidade { get; set; }

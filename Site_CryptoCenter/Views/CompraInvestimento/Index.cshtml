@@ -4,11 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Investimentos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Comprar investimento", "Create")
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -21,9 +22,11 @@
             @Html.DisplayNameFor(model => model.Quantidade)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.InvestimentoId)
+            @Html.DisplayNameFor(model => model.Investimento.QuantidadeDisponivel)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Investimento.Descricao)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -38,13 +41,29 @@
             @Html.DisplayFor(modelItem => item.Quantidade)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.InvestimentoId)
+            @Html.DisplayFor(modelItem => item.Investimento.QuantidadeDisponivel)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CompraInvestimentoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CompraInvestimentoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CompraInvestimentoId })
+            @Html.DisplayFor(modelItem => item.Investimento.Descricao)
         </td>
+        @if (Session["Id"] != null)
+        {
+            if (Session["Nome"].Equals("admin"))
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CompraInvestimentoId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CompraInvestimentoId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CompraInvestimentoId })
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.CompraInvestimentoId }) |
+                </td>
+            }
+        }
+
     </tr>
 }
 

@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<Domain_CryptoCenter.Domain.Investimento>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Investimentos";
 }
 
-<h2>Index</h2>
+<h2>Criar investimento</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+  @Html.ActionLink("Criar novo investimento", "Create")
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -40,10 +41,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.QuantidadeVendida)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.InvestimentoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.InvestimentoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.InvestimentoId })
+         <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.InvestimentoId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.InvestimentoId }) |
+            @Html.ActionLink("Deletar", "Delete", new { id = item.InvestimentoId })
         </td>
     </tr>
 }

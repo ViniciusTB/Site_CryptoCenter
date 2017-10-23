@@ -16,7 +16,7 @@ namespace Site_CryptoCenter.Controllers
         private CryptoCenterContext db = new CryptoCenterContext();
 
         // GET: CompraInvestimento
-        public ActionResult Index()
+        public ActionResult Index(Investimento investimento)
         {
             var compraInvestimento = db.CompraInvestimento.Include(c => c.Usuario);
             return View(compraInvestimento.ToList());
@@ -41,7 +41,7 @@ namespace Site_CryptoCenter.Controllers
         public ActionResult Create()
         {
             //ViewBag.UsuarioId = new SelectList(db.Usuarios, "UsuarioId", "Nome");
-            ViewBag.InvestimentoId = new SelectList(db.Investimento, "InvestimentoId", "Descricao");
+            ViewBag.InvestimentoId = new SelectList(db.Investimento, "InvestimentoId", "Descricao", "QuantidadeDisponivel");
 
             return View();
         }
@@ -57,7 +57,7 @@ namespace Site_CryptoCenter.Controllers
             {
                 if(Session["Id"] != null)
                 {
-
+                    compraInvestimento.UsuarioId = Convert.ToInt32(Session["Id"]);
                 }
                 compraInvestimento.DataCompra = DateTime.Now;
                 db.CompraInvestimento.Add(compraInvestimento);
