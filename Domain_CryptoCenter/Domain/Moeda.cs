@@ -15,5 +15,6 @@ namespace Domain_CryptoCenter.Domain
         public string Apelido { get; set; }
         public double Preco { get; set; }
         public double Saldo { get; set; }
+        public double Saldo1 { get; set; }
     }
 }
